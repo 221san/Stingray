@@ -132,7 +132,8 @@ def logout():
     return redirect('/')
 
 if __name__ =="__main__":
-    ム.run(port=random.randint(1,65535))
+    from waitress import serve
+    serve(ム, host="0.0.0.0", port=4444)
 
 
 """
