@@ -1,0 +1,17 @@
+body {
+    background-color: rgb(52, 52, 52);
+    color: white;
+    background-image: url("/static/assets/bg.svg");
+    background-repeat: no-repeat;
+    background-size: 40% auto;
+    background-position: center top 100px;
+}
+
+.navbar-logo {
+    width: 40px;
+}
+
+#input_box {
+    background-color: rgb(52, 52, 52);
+    color: white;
+}

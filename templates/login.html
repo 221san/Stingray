@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<style>
+  body {
+    background-color: rgb(52, 52, 52);
+    color: white;
+    background-image: url("./static/assets/bg.svg");
+    background-repeat: no-repeat;
+    background-size: 40% auto;
+    background-position: center top 100px;
+    
+    #input_box {
+      background-color: rgb(52, 52, 52);
+      color: white;
+  }
+}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<div class="d-flex justify-content-center">
+    <form method="post">
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="input_box">@</span>
+        <textarea class="form-control" name="H_ID" id="input_box" rows="1" style="width: 400px;" placeholder="H_ID"></textarea>
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="input_box">
+          <i class="fa fa-key"></i>
+        </span>
+        <input type="password" id="input_box"name="H_PASS" class="form-control" style="width: 400px;" aria-labelledby="passwordHelpInline" placeholder="H_PASS">
+      </div>
+      
+      <div class="col-auto">
+        <button type="submit" class="btn btn-danger mb-5" name="login">Login</button>
+      </div>
+    </form>
+</div>
+
+{% endblock %}

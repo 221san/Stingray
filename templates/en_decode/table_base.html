@@ -1,0 +1,25 @@
+
+{% if _history|length >0 %}
+    <table  class="table table-bordered border-primary">
+    <thead class="table-dark">
+        <tr>
+        <th scope="col">Code</th>
+        <th scope="col">Result</th>   
+        </tr>
+    </thead>
+
+    <tbody class="table-group-divider">
+            {% for v in _history %}
+                <tr class="table-dark">
+                    <td>{{v.0}}</td>
+                    <td>{{v.1}}</td>
+                </tr>
+            {% endfor %}
+    </tbody>
+    </table>
+    
+    <form method="post">
+        <button type="submit" class="btn btn-outline-warning mb-3" name="clear_history">Clear</button>
+    </form>
+{% endif %}
+

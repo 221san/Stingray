@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{{ url_for('index') }}">
+        {% if 'H_ID' not in session %}
+          ム
+        {% else %}
+          <img src="./static/assets/icon.svg" alt="ム" class="img-fluid navbar-logo">           
+        {% endif %}
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item dropdown bg-body-tertiary">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            En-Decode
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{{url_for('base64')}}">Base64</a></li>
+            <li><a class="dropdown-item" href="{{url_for('base32')}}">Base32</a></li>
+            <li><a class="dropdown-item" href="{{url_for('hex')}}">Hex</a></li>
+            <li><a class="dropdown-item" href="{{url_for('caesar_cipher')}}">Caesar Cipher</a></li>
+          </ul>
+        </li>
+      </ul>
+      {% if 'H_ID' not in session %}
+        <a href="{{url_for('login')}}" class="btn btn-outline-warning" type="submit">Login</a>
+      
+      {% else %}
+        <a href="{{url_for('index')}}" class="btn btn-outline-danger " >{{session['H_ID']}}</a>
+        <a href="{{url_for('logout')}}" class="btn btn-outline-warning" type="submit">Logout</a>              
+      {% endif %}
+    </div>
+  </div>
+</nav>

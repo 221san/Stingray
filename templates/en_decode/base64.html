@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Base64{% endblock %}
+
+{% block content %}
+<form method="post">
+    <textarea class="form-control" name="code" id="input_box" rows="3"></textarea>
+    <div class="col-auto">
+        <button type="submit" class="btn btn-outline-success mb-3" name="decode">Decode</button>
+        <button type="submit" class="btn btn-outline-success mb-3" name="encode">Encode</button>
+    </div>
+</form>
+
+{% include '/en_decode/table_base.html' %}
+
+{% endblock %}
